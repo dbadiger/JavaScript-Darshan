@@ -26,6 +26,7 @@ console.log(+true)  //1
 console.log(+"")  //0
 
 
+//Preincrement postincrement
 let x = 3;
 const y = x++;
 // x is 4; y is 3

@@ -99,3 +99,68 @@ i)               Object                                object
 ii)              Array                                  object
 iii)             Function                            function(object)
 */
+
+
+
+
+
+
+// Memory Management
+/*
+Two types of memory used in JS
+a. Stack Memory
+b. Heap Memory
+
+Stack Memory is used in Premitive Datatypes.
+Hap Memory is used in Non-premitive Datatypes.
+
+Whenever we use stack memory, whenever we declare any variables, we get its copy.
+whereas In Heap Meomry, variables declared, we get its original value/address, refernce.
+
+*/
+
+//Stack Memory Example:
+let Name = "Darshan"
+console.log(Name)   //Darshan
+let anotherName = Name; // Copy of Name value is given to anotherName varible.
+console.log(anotherName)    //Darshan
+anotherName = "Badiger"     //value of anotherName vaible is changed from "Darshan" to "Badiger". but value of Name variable is "Darshan".
+console.log(anotherName)        //Badiger
+//All the varibales are stored in Stack, and its values are also stored in stack memory as a copy.
+
+
+
+//Heap Memory Example
+let upiData = {
+    email:"darshan@google.com",
+    upi: "darshan@ybl"
+}
+
+let upiData1 = upiData;
+console.log(upiData)
+console.log(upiData1)
+/*
+output or both variables is same
+{
+    email:"darshan@google.com",
+    upi: "darshan@ybl"
+}
+
+here upiData, and upiData1 are varibles they are stored in stack.
+but its values are object. SO these values are directly stored in Heap Memory.
+and upiData, upiData1 both are pinting to one value itself (Not a copy of value).
+whenever we change any value of the object, it is direclty updated(Original Vlaue is updated).
+Below is example, how it will get updated in heap memoory, if we use object.
+
+*/
+
+upiData1.email = "darshan_badiger@microsoft.com"
+console.log(upiData);
+console.log(upiData1);
+/*
+output or both variables is updated email Id and upi ID:
+ {
+    email:"darshan_badiger@microsoft.com",
+    upi: "darshan@ybl"
+}
+*/
