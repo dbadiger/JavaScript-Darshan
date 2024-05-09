@@ -1,0 +1,120 @@
+ <!DOCTYPE html>    <!--This line says the document type. It is html document      -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color:aliceblue
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div >
+        <h1 id="first heading" class="heading" style="color:aqua">Document Object Model <span style="display: none;">Coding is Secret</span></h1>
+        <p id="paragraph">Learn DOM Manepulation Step by Step</p>
+        <h2 >Lorem ipsum dolor sit.</h2>
+        <h2 id="head2">Lorem, ipsum dolor..</h2>
+        <h2 class="heading2">Lorem, ipsum dolor..</h2>
+        <input type="password" name="password" id="">
+
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li>Four</li>
+        </ul>
+        <!--console.log(window) 
+            console.log(document)
+            console.dir(document)
+            console.log(document.baseURI)
+            console.log(document.links)
+            console.log(document.links[3])
+
+        -->
+    </div>
+</body>
+
+<script>
+    // document.getElementById('first heading').innerHTML = "<h1>DOM MANIPULATION</h1>"  //It changes heading from "Document Object Model" to "DOM MANIPULATION"
+
+    document.getElementById('first heading').getAttribute('id') //output= 'first heading'
+    document.getElementById('first heading').getAttribute('class') //output= 'heading'      //pass the key and you will get value when we use 'getAttribute()'
+
+    document.getElementById('first heading').setAttribute('class', 'test heading')  //overwrites the class name from "heading" to "test heading"
+
+    const title = document.getElementById('first heading')
+    title.style.backgroundColor = 'orange'
+    title.style.padding="15px "
+    title.style.borderRadius="15px "
+    console.log(title.textContent)  //gives the content in that ID: "DOM MANIPULATION"
+    console.log(title.innerHTML)  //gives the content in that ID with tag: '<h1>DOM MANIPULATION</h1>'
+    console.log(title.innerText)  //gives the content in that ID: 'DOM MANIPULATION'
+
+    //difference between innerText and textContent
+    //innerText: if you hide some content with help of CSS, that part will not be displayed/visible. whereas, in textContent, All the content will be displayed/visible, irrespective of its styles.
+    console.log(title.innerText)            //Document Object Model.  Here "Coding is Secret" is hidden, 
+    console.log(title.textContent)          //Document Object Model Coding is Secret
+
+
+    console.log(title.innerHTML)          //if you have written some html content inside the tag, that will be displayed.
+    // output: 'Document Object Model <span style="display: none;">Coding is Secret</span>'
+
+    const head = document.getElementsByClassName('heading')
+    console.log(head)       //HTMLCollection [h1#first heading.test.heading, first heading: h1#first heading.test.heading]
+
+
+
+    //QuerySelector
+    console.log(document.querySelector('h2'))       //displays the first element of that tag. output: <h2>Lorem ipsum dolor sit.</h2>
+
+    //access element using id
+    console.log(document.querySelector('#paragraph') )      //<p id="paragraph">Learn DOM Manepulation Step by Step</p>
+    console.log(document.querySelector('#head2') )      //<h2 id="head2">Lorem, ipsum dolor..</h2>
+
+    //access element using class
+    console.log(document.querySelector('.heading2'))    //<h2 class="heading2">Lorem, ipsum dolor..</h2>
+
+    console.log(document.querySelector('input[type="password"]'))       //<input type="password" name="password" id="">
+    console.log(document.querySelector('p:first-child'))
+    console.log(document.querySelector('h2:nth-child(2)'))
+    const mylist = document.querySelector('ul')
+    console.log(mylist)         //<ul>with all list items</ul>
+
+    const turnblue = document.querySelector('li');
+    turnblue.style.backgroundColor="blue"
+    turnblue.style.padding = "10px"
+    turnblue.innerText = "Five"     //changes "One" to "Five"
+
+
+    console.log(document.querySelectorAll('li'))        //NodeList(4) 0: li 1:li 2:li 3:li length : 4
+    const templist = document.querySelectorAll('li')
+    console.log(templist)   //NodeList(4) 0: li 1:li 2:li 3:li length : 4
+    console.log(templist[0].style.color='red')
+    console.log(templist[1].style.color='orange')
+    console.log(templist[2].style.color='yellow')
+
+    templist.forEach(function (l) {
+        l.style.color="#F5DAB1"
+    })
+
+    const heading1 = document.querySelectorAll('h1')
+    heading1[0].style.color="yellow"
+
+    const headin2 = document.querySelectorAll('h2')
+    headin2[2].style.color="yellow"
+
+
+    const tempclass = document.getElementsByClassName('test heading')
+    console.log(tempclass)
+
+    console.log(Array.from(tempclass))
+    const arrayClassList = Array.from(tempclass)
+
+    arrayClassList.forEach(function(li){
+       li.style.color = "red"
+    })
+</script>
+</html>
