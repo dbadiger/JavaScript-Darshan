@@ -1,0 +1,15 @@
+html{
+    margin: 0;
+}
+.container{
+    background-color: #2b2929;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+    line-height: 20px;
+    font-family: 'poppins';
+    letter-spacing: 1px;
+    width: 60%;
+    margin: 100px auto 100px;
+    border-radius: 10px;
+}
