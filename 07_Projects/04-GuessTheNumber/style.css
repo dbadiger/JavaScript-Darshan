@@ -1,0 +1,29 @@
+#wrapper{
+    margin: 100px 50px 50px 100px;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#guess{
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: azure;
+}
+#guessField{
+    padding: 10px;
+}
