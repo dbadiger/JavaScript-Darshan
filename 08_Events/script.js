@@ -17,19 +17,21 @@ document.getElementById('lion').addEventListener('click', function(e){
 }) 
 
 
-
+/*
 
 //Propagation: Bubbling - from inner Element to Outer Element propagation (Inside to Outside / Child to Parent)
 //you can remove 3rd paramenter(false), then also it works same. Because by default, it will be false only,
-/*document.getElementById('images').addEventListener('click', function(e){
+document.getElementById('images').addEventListener('click', function(e){
     console.log("Clicked inside UL")   
 }, false)   //Output: Clicked inside UL
 
 document.getElementById('lion').addEventListener('click', function(e){
     console.log("Lion Clicked")  
+    e.stopPropagation() //stopPropagation: an event will not go to its parent, after bubbling. it will stop where the event has clicked(accurred).
 }, false) //Output:Lion Clicked  Clicked inside UL
 */
 
+/*
 //Propagation: Event Capturing - from Outside Element to inner Element propagation (Outside to Inside/ Parent to Child)
 document.getElementById('images').addEventListener('click', function(e){
     console.log("Clicked inside UL")   
@@ -38,6 +40,36 @@ document.getElementById('images').addEventListener('click', function(e){
 document.getElementById('lion').addEventListener('click', function(e){
     console.log("Lion Clicked")  
 }, true) //Output: Clicked inside UL Lion Clicked
+
+*/
+
+/*
+document.querySelector('#google').addEventListener('click', function(e){
+    // e.preventDefault();
+    e.stopPropagation();
+    console.log("Google clicked");
+}, false)
+*/
+
+document.querySelector('#images').addEventListener('click', function(e){
+    // console.log(e)
+    // console.log(e.target)
+    console.log(e.target.parentNode)
+    console.log(e.target.tagName)
+    // removeIt.remove()        //Approach 1: here if we click on li, full ul is getting deleted.
+    // removeIt.parentNode.removeChild(removeIt)        //Approach 2
+    if(e.target.tagName === "IMG"){
+        let removeIt = e.target.parentNode
+        console.log(e.target.id)
+        removeIt.remove()
+    }
+
+}, false)
+
+
+
+
+
 
 
 
