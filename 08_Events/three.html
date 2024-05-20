@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Time Interval</title>
+</head>
+<body>
+    <h1>Set Interval</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+<script>
+
+document.querySelector('#start').addEventListener('click', function(){
+    console.log("STARTED")
+    const start = function(){
+        console.log("Darshan", Date.now())
+    }
+    let int_id = setInterval(start,1000,(click=start))
+    
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(int_id)
+        console.log("STOPPED")
+    })
+})
+
+// const sayDate= function(str){
+//         console.log(str, Date.now())
+//     }
+    //const int_id = setInterval(sayDate,1000, "Hi")
+
+    
+</script>
+</html>

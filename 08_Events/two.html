@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyn Await</title>
+</head>
+<body>
+    <h1>Asyn Await</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //Browser (Web)Functions: setTimeout(), setTimeInterval()
+    //clearTimeout(), clearInerval()
+    
+    const name1 = function(e){
+        console.log("Darshan Badiger")
+    }
+    const change_title =function(){
+        document.querySelector('h1').innerHTML = "BEST CODER "
+    }
+    
+    
+    const change_timeout = setTimeout(change_title, 3000)
+    
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(change_timeout)
+        console.log("STOPPED")
+    })
+    
+
+    // setInterval(function(e){
+    //     console.log("Darshan Badiger")
+    // }, 1000)
+</script>
+</html>
