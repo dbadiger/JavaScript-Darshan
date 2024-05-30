@@ -1,0 +1,38 @@
+<!--  'this' that it does not overrides the content of 'this' in callback function:-
+In JavaScript, the bind() method creates a new function that, when invoked, 
+has its this value explicitly set to the value provided as an argument to bind(). 
+It doesn't override this in the original function;rather, it creates a new function with a bound context. -->
+
+<!-- With the bind() method, an object can borrow a method from another object. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind Method</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:3000"
+            
+            //requirement
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this))
+            
+        }
+        handleClick (){
+            console.log("Button Clicked");
+            console.log(this);
+            console.log(this.server);
+        }
+    }
+
+    const app = new React()
+</script>
+</html>
