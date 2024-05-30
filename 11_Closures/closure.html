@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">green</button>
+</body>
+<script>
+/*
+    function init(){
+        let name = "darshan"
+        function displayName(){
+            console.log(name);
+        }
+        displayName()
+    }
+    init();
+
+    //------------------------------------
+*/
+
+
+/*
+function outer(){
+    let username = "darshan"
+    function inner(){
+        let user1 = "Hello"
+        console.log("INNER",username);
+    }
+
+    function secondInner(){
+        console.log("SecondInner", username);
+        console.log(user1);     //one child's varibale cannot shared with another child, whreas, both children can access variables of parent function. and parent also cannont access the child variable.
+    }
+    inner();
+    secondInner();
+
+    console.log(user1); //Parent cannot access child's variable.
+}
+outer();
+console.log("TOO OUTER",username);
+
+//-----------------------------------------------
+*/
+
+/*
+function makeFun(){
+    const name="mozilla"
+    function displayName(){
+        console.log(name)
+    }
+    return displayName;
+}
+
+const myFun = makeFun()
+myFun();
+-----------------------------------
+*/
+</script>
+<script>
+
+    /*
+    document.getElementById('orange').onclick = function(){
+        document.body.style.backgroundColor = `Orange`
+    }
+    document.getElementById('green').onclick = function(){
+        document.body.style.backgroundColor=`green`
+    }
+    //If there are many buttons, and many colors, then we need to repeat this as many times... this is wrong way.. 
+--------------------------------------------
+    */
+   function clickhandler(color){
+    // document.body.style.backgroundColor = `${color}`
+    return function(){
+        document.body.style.backgroundColor = `${color}`
+    }
+   }
+
+   document.getElementById('orange').onclick = clickhandler("orange")
+   document.getElementById('green').onclick = clickhandler("green")
+
+</script>
+</html>
