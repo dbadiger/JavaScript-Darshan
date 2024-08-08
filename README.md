@@ -96,10 +96,19 @@ let's talk about some Range of Primitive DataType:
         Represents large integers that cannot be represented by the Number type.
         The range is practically unlimited and depends on available memory.
 
-### datatypes are based on memory allocation
-Primitive datatypes->  call by value (string, number, boolean,null, undefined, BigInt, symbol) ->Stack memory
+### Datatypes are based on memory allocation
+Primitive datatypes->  call by value (string, number, boolean, null, undefined, BigInt, symbol) ->Stack memory
 
 Reference/Non-primitive data types -> call by reference ( array, object, function) -> heap memory
 
 JavaScript is a dynamically typed language. This means that you don't need to specify the data type of a variable when you declare it.
+
+Primitive Types:
+1. Stored in stack.
+2. Passed or assigned by value (call by value).
+3. Changes to copies don't affect the original.
+
+Reference Types:
+1. Stored in heap; accessed via references (stored in a stack).
+2. Changing the value through another reference affects the original.
 
