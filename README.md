@@ -9,7 +9,7 @@ var = it can be re-assigned a value and it can also be declared again  (Global s
 => Never use var in your code instead of let because of block and functional scope issues.
  console.table([group of variables you want to show in tabular form])
 
- var, let, and const are all ways to declare variables in JavaScript, but they differ in scope, hoisting behavior, and mutability.
+ #### var, let, and const are all ways to declare variables in JavaScript, but they differ in scope, hoisting behavior, and mutability.
 
 var: It's function-scoped and hoisted, meaning it can be accessed before declaration within its function. Variables declared with var can be re-declared and re-assigned. It's now generally replaced by let and const in modern JavaScript due to its less predictable behavior.
 
@@ -19,3 +19,19 @@ const: Also block-scoped and subject to the Temporal Dead Zone. It must be initi
 
 In summary, prefer let and const for their block-level scoping, which enhances code readability and maintainability. 
 Use let for variables that change and const for variables that should remain constant.
+
+
+#### Return type of variables in JavaScript
+1) Primitive Datatypes
+       Number => number
+       String  => string
+       Boolean  => boolean
+       null  => object
+       undefined  =>  undefined
+       Symbol  =>  symbol
+       BigInt  =>  bigint
+
+2) Non-primitive Datatypes
+       Arrays  =>  object
+       Function  =>  function
+       Object  =>  object
