@@ -1,7 +1,6 @@
 # String in JavaScript
 
 #### Ways to write string 
-
     let s1 = "String 1"
     let s2 = 'String 2'
     
@@ -15,6 +14,9 @@
     Here I'm injecting variable ${var_name}
     This is the third line, I'm passing one more variable ${s2}`
 
+    let s5 = new String("Hello World");
+    console.log(s5);
+    consloe.log(typeof(s5));
 
 #### Old way:
     Let a = name
