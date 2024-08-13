@@ -33,6 +33,13 @@
     document.write(``Hello my name is ${a} and I'm ${b} years old `);
 
 We use ` `` to write a complete string and will use ${} to inject variables in it.
+
+### Template Literals (one of the ES6 Features)
+        const name = 'Kiran'
+        const greet = `Hello, welcome ${name}`
+        console.log(greet)
+
+Template Literals allow embedding expressions inside strings, providing a cleaner and more readable way to concatenate strings.
 ### String Methods
 
     let s = new String("Darshan"); // here string s is an object
